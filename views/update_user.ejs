@@ -1,0 +1,71 @@
+<%- include('include/_header.ejs') -%>
+
+
+
+
+
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <div class="filter">
+                <a href="/"><i class="fas fa-angle-double-left"></i>All user </a>
+            </div>
+        </div> 
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update User</h2>
+            <span class="text-light">update your account</span>
+        </div>
+        <!--form-->
+        <form  method="POST" id="update_user">
+            <div class="new_user">
+                <div class="form-group">
+                    <lable for="name" class="text-light">Name</lable>
+                    <input type="hidden" name="id" value="<%=user._id%>">
+                    <input type="text" name="name" value="<%=user.name%>" placeholder="Mark Stoenis">
+                </div>
+                <div class="form-group"> 
+                    <lable for="Email" class="text-light">Email</lable>
+                    <input type="text" name="email" value="<%=user.email%>" placeholder="123@gamil.com">
+                </div>
+                <div class="form-group">
+                    <lable for="Gender" class="text-light">Gender</lable>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-2" name="gender" value="Male"<%=user.gender=="Male"?'checked':''%>>
+                        <lable for="radio-2" class="radio-label">Male</lable>
+                    </div>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-3" name="gender" value="Female"<%=user.gender=="Female"?'checked':''%>>
+                        <lable for="radio-3" class="radio-label">Female</lable>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <lable for="Gender" class="text-light">Status</lable>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-4" name="status" value="Active"<%=user.status=="Active"?'checked':''%>>
+                        <lable for="radio-4" class="radio-label">Active</lable>
+                    </div>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-5" name="status" value="Inactive"<%=user.status=="Inactive"?'checked':''%>>
+                        <lable for="radio-5" class="radio-label">Inactive</lable>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn text-dark update">Save </button>
+                </div>
+            </div>
+        </form>
+              
+
+        <!--form-->
+    
+    </div>
+</main>
+
+
+
+
+
+
+
+
+<%- include('include/_footer.ejs') -%>
